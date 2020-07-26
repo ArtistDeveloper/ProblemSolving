@@ -3,9 +3,10 @@
 
 int main()
 {
-	int board[101][101] = {0};
+	int board[101][101] = { 0 };
 	int confetti;
 	int row, column, width, height;
+	int cnt[101] = { 0 };
 
 	scanf("%d", &confetti);
 
@@ -19,17 +20,16 @@ int main()
 		}
 	}
 
-	int tocount = 1;
-	int gat = 0;
-	while(tocount < confetti + 1) {
-		for (int i = 0; i < 101; i++) {
-			for (int j = 0; j < 101; j++) {
-				if (board[i][j] == tocount) gat++;
-			}
+	for (int i = 0; i < 101; i++) {
+		for (int j = 0; j < 101; j++) {
+			cnt[board[i][j]]++; 
+            // cnt[0][0]이 1일때 +1
+            // cnt[0][1]이 1일때 +1 이런식으로 1번  색종이의 면적이 구해진다.
 		}
-		printf("%d\n", gat);
-		tocount++;
-		gat = 0;
+	}
+
+	for (int i = 1; i < confetti + 1; i++) {
+		printf("%d\n", cnt[i]);
 	}
 	
 	return 0;
