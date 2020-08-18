@@ -2,16 +2,26 @@
 #include <cstdio>
 
 int array[999+1][999+1];
-int count = 0;
+int count = 1;
+int row = 0, col = 0;
+int flag = 1;
+int pos;
 
 void draw(int n)
 {
-	int start = n / 2;
+	for (int k = n; k > n; k--) {
+		if (flag == 1) {
+			for (int i = k; i > 0; i--) {
+				array[row][col] = count;
+			}
+		}
 
-	for (int row = 0; )
-
-
-	array[start + ][start + ] = count;
+		else if (flag == 0) {
+			for (int j = k; j > 0; j--) {
+				array[row][col] = count;
+			}
+		}
+	}
 }
 
 void arrPrint(int size)
@@ -26,8 +36,8 @@ void arrPrint(int size)
 
 int main()
 {
-	int n, pos;
-	scanf("%d %d", &n);
+	int n;
+	scanf("%d", &n);
 	
 	draw(n);
 	arrPrint(n);
