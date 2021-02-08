@@ -1,26 +1,30 @@
-#include <iostream>
-
-using namespace std;
+#include <cstdio>
 
 int main()
 {
-	int n, m; //m은 생성자.
-	int count = 0;
-	int rest = 0, quotient = 0;
-	cin >> n;
-
-	while (count < n) {
-		//while (quotient / 0 != 0) {
-
-		//}
-
-		
-
-		//숫자 끝까지 돈 것.
-		if (quotient / 0 != 0) {
-			
-		}
-	}
-
-	return 0;
+    int N;
+    
+    scanf("%d", &N);
+    
+    for (int i = 1; i < N; i++)
+    {
+        int temp = i;
+        int num = i;
+        
+        while(temp > 0)
+        {
+            num += temp % 10;
+            temp /= 10;
+        }
+        
+        if (num == N)
+        {
+            printf("%d", i);
+            N = 0;
+            break;
+        }
+    }
+    
+    if (N != 0)
+        printf("0");
 }
