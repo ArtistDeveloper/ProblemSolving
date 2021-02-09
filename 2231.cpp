@@ -1,30 +1,34 @@
-#include <cstdio>
+#include <iostream>
+
+using namespace std;
 
 int main()
 {
-    int N;
-    
-    scanf("%d", &N);
-    
-    for (int i = 1; i < N; i++)
-    {
-        int temp = i;
-        int num = i;
-        
-        while(temp > 0)
-        {
-            num += temp % 10;
-            temp /= 10;
-        }
-        
-        if (num == N)
-        {
-            printf("%d", i);
-            N = 0;
-            break;
-        }
-    }
-    
-    if (N != 0)
-        printf("0");
+	int n, m = 0;
+	int calcVar = 0;
+	int sum = 0;
+
+	cin >> n;
+
+	while (m < n) {
+		calcVar = m;
+
+		while (calcVar != 0) {
+			sum += calcVar % 10;
+			calcVar = calcVar / 10;
+		}
+
+		if (m + sum == n) {
+			cout << m;
+			return 0;
+		}
+
+		m++;
+		sum = 0;
+	}
+
+	cout << 0;
+
+
+	return 0;
 }
